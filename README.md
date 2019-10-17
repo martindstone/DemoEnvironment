@@ -16,7 +16,7 @@
 <img src="https://github.com/PD-hliang/DemoEnvironment/blob/master/images/example1.png" width="400">
 
 3. For each user who needs their own phone shop instance, you will need to make a folder for them in the root directory of the S3 bucket. You can then copy and paste the contents of Demo App folder into the new folder. In the EMEADEMO S3 bucket, we have used the sales reps name as the folder name as you can see below. 
-<img src="https://github.com/PD-hliang/DemoEnvironment/blob/master/images/example2.png" width="600">
+<img src="https://github.com/PD-hliang/DemoEnvironment/blob/master/images/example2.png" width="300">
 
 
 This will allow you to route the triggered alerts to the correct service for each individual user, as the sales reps name is extracted from the URL of the website and will be passed in the payload to PagerDuty
