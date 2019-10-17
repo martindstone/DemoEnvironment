@@ -9,7 +9,6 @@
 
 
 ## Setting up the Phone Shop
--- note to self write why we need a individual folder for each user
 
 1. Clone the demo app folder in this github repo, this contains the "Phone Shop" app that users can use to trigger off a group of incidents to run a typical incident workflow.
 
