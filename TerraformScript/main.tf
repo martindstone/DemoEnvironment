@@ -176,8 +176,8 @@
     ])
     condition_json = jsonencode([
       "or",
-      ["contains",["path", "systemRoute"], "${var.users[count.index]}"],
-      ["contains",["path", "details.systemRoute"], "${var.users[count.index]}"]
+      ["contains",["path", "SystemRoute"], "${var.users[count.index]}"],
+      ["contains",["path", "details.SystemRoute"], "${var.users[count.index]}"]
 
     ])
 
