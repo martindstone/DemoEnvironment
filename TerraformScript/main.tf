@@ -4,8 +4,8 @@
 
     force_destroy = true
 
-    policy = <<EOF
-  {
+    policy = <<POLICY
+{
       "Version":"2008-10-17",
       "Statement":[{
       "Sid":"AllowPublicRead",
@@ -15,7 +15,8 @@
       "Resource":["arn:aws:s3:::${var.bucketName}/*"]
       }]
   }
-  EOF
+  POLICY
+
 
     website {
       index_document = "index.html"
@@ -51,7 +52,7 @@
 
     provisioner "local-exec" {
 
-      // replace DIR with where you downloaded the DemoApp directory e.g. /Users/hliang/Desktop/DemoApp
+      // replace DIR with where you save the DemoApp directory e.g. /Users/hliang/Desktop/DemoApp
 
       command = "aws s3 sync DIR s3://${aws_s3_bucket.website.id}/${var.users[count.index]}"
     }
