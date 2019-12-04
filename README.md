@@ -12,7 +12,7 @@
 
 1. Clone the demo app folder in this github repo, this contains the "Phone Shop" app that users can use to trigger off a group of incidents to run a typical incident workflow.
 
-2. You will need to edit the cart.html file and input the global event integration key from your PagerDuty instance and input this for the serviceKey variable which can be shown on line 313 and 316 of the cart.html file. 
+2. You will need to edit the cart.html file and input the global event integration key from your PagerDuty instance and input this for the serviceKey variable which can be shown on line 316 of the cart.html file (There is also one to be replaced on line 446 and 514. 
 <img src="https://github.com/PD-hliang/DemoEnvironment/blob/master/images/example1.png" width="400">
 
 3. For each user who needs their own phone shop instance, you will need to make a folder for them in the root directory of the S3 bucket. You can then copy and paste the contents of Demo App folder into the new folder. In the EMEADEMO S3 bucket, we have used the sales reps name as the folder name as you can see below. 
