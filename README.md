@@ -6,6 +6,7 @@
 * Access to AWS S3 Bucket to host the "phone shop" website
 * Pagerduty instance 
 * Global event rule key
+* Terraform installed (if you want to automate some of this, you can find this in the last section)
 
 
 ## Setting up the Phone Shop
@@ -42,7 +43,7 @@ Use the details.SystemRoute variable and the sales reps folder name to route the
 
 If you wanted to automate the creation of the Phone Shop, creating services, EP's, and event rules for each Rep to be on boarded, I have added some a terraform script that does this. It will build out a service, a simple EP with the Rep as the first escalation point so they will always be on call, and a event rule that will route their alert from their Phone Shop instance to the correct service. 
 
-1. First of all you will need to clone both the terraformScript and Demo App folder. 
+1. First of all you will need to clone both the terraformScript and Demo App folder (remember to make sure you do step 2 from Setting up the phone shop above). 
 
 2. You will need to start filling out the vars.tf file out with all the necessary variables to automate this flow. The first set of variables you will need to fill out are the AWS environment variables as shown below: 
 
@@ -54,7 +55,7 @@ You will need to add:
  
 3. Once you have done that you will need to add in your PD variables as shown below: 
 
-<img src="https://github.com/PD-hliang/DemoEnvironment/blob/master/images/pdVars.png" width="300">
+<img src="https://github.com/PD-hliang/DemoEnvironment/blob/master/images/pdVars.png" width="500">
 
 You will need: 
  - You P1 incident priority ID
@@ -63,7 +64,7 @@ You will need:
  
 4. The final step is to alter one section in the main.tf file. You need to set directory for where you save the DemoApp to be in (this can be found on line 56), you can see this in the screenshot below: 
 
-<img src="https://github.com/PD-hliang/DemoEnvironment/blob/master/images/customCommand.png" width="300">
+<img src="https://github.com/PD-hliang/DemoEnvironment/blob/master/images/customCommand.png" width="700">
 
 5. Now run terraform and it should automajically build out the Phone shop website, services, EP's and event rules for you!
 
