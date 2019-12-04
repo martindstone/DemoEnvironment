@@ -38,7 +38,32 @@ Use the details.SystemRoute variable and the sales reps folder name to route the
 2. We have also automatically set the priority of the incident to P1 so this automatically populates the status page business services
 
  
+## Automating some of this
 
+If you wanted to automate the creation of the Phone Shop, creating services, EP's, and event rules for each Rep to be on boarded, I have added some a terraform script that does this. It will build out a service, a simple EP with the Rep as the first escalation point so they will always be on call, and a event rule that will route their alert from their Phone Shop instance to the correct service. 
 
+1. First of all you will need to clone both the terraformScript and Demo App folder. 
 
+2. You will need to start filling out the vars.tf file out with all the necessary variables to automate this flow. The first set of variables you will need to fill out are the AWS environment variables as shown below: 
+
+<img src="https://github.com/PD-hliang/DemoEnvironment/blob/master/images/awsVars.png" width="300">
+You will need to add:
+ - The preferred region the S3 bucket sits in
+ - Your AWS access key and secret key
+ - A unique bucket name
+ 
+3. Once you have done that you will need to add in your PD variables as shown below: 
+
+<img src="https://github.com/PD-hliang/DemoEnvironment/blob/master/images/pdVars.png" width="300">
+
+You will need: 
+ - You P1 incident priority ID
+ - A list of email ID's (as shown in the example in the screenshot) and Rep first names (both list must be in the same Rep order, as shown in the example above)
+ - a PD API key which can read and write 
+ 
+4. The final step is to alter one section in the main.tf file. You need to set directory for where you save the DemoApp to be in (this can be found on line 56), you can see this in the screenshot below: 
+
+<img src="https://github.com/PD-hliang/DemoEnvironment/blob/master/images/customCommand.png" width="300">
+
+5. Now run terraform and it should automajically build out the Phone shop website, services, EP's and event rules for you!
 
