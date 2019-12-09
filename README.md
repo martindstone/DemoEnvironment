@@ -68,3 +68,20 @@ You will need:
 
 5. Now run terraform and it should automajically build out the Phone shop website, services, EP's and event rules for you!
 
+ 
+## Application work flow
+
+The work flow of the PhoneDuty app is as follows: 
+
+On the homepage click on the basket icon on the top right as shown in the screenshot:
+<img src="https://github.com/PD-hliang/DemoEnvironment/blob/master/images/workflow1.png" width="700">
+
+
+You will be the brought to the basket page:
+
+<img src="https://github.com/PD-hliang/DemoEnvironment/blob/master/images/workflow2.png" width="700">
+
+If you scroll down to the bottom and click on "Proceed to Checkout", this will trigger off some incidents to your PagerDuty environment and also bring you to an error page: 
+
+<img src="https://github.com/PD-hliang/DemoEnvironment/blob/master/images/workflow3.png" width="700">
+
